@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<link href="design.css" rel="stylesheet" type="text/css">
+<head>
+	<ul class="black_box black_box-main-nav">    
+        <li><a > HOME </a></li>
+        <li><a> REGISTER </a></li>
+        <li><a> CUSTOMER</a></li>
+        <li><a> ABOUT </a></li> 
+		<br>
+	</ul>
+</head>
+    
+<body>
+	<div class=" black_box black_box-body_box"> 
+		<script>
+			function mult(value){
+				var x, y;
+				x = 2 * value;
+				y= 3 * value;
+				document.getElementById("out2x").value = x;
+				document.getElementById("out3x").value = y;
+
+			}
+
+			function tax(value){
+				var m;
+				value = value * 12;
+
+				if(value >=1 && value <= 18200){
+					m = 0;
+					document.getElementById("taxCal").value = m;
+					
+				}
+				else if (value > 18200 && value <= 45000){
+					m = (value - 18200) *0.19 ;
+					document.getElementById("taxCal").value = m/12;
+					
+
+				}
+				else if (value > 45000 && value <= 120000){
+					m = 5092 + 0.325*(value - 45000);
+					document.getElementById("taxCal").value = m/12;
+					
+				}
+				else if (value > 120000 && value <= 180000){
+					m = 29467+ 0.37*(value - 120000);
+					document.getElementById("taxCal").value = m/12;
+					
+
+				}
+
+				else if (value > 180000){
+					m = 51667 + 0.45*(value - 180000);
+					document.getElementById("taxCal").value = m/12;
+					
+				}
+
+
+				
+				
+
+
+			}
+
+			function inverse(value1, value2, value3, value4){
+				var a;
+				a= value1*value3 - value2*value4;
+				document.getElementById("inverse").value = a;
+			}
+
+		</script>
+
+		<br><br>
+
+		
+		
+
+		<label for="">Monthly Income:</label>
+		<br/>
+		<br/>
+		<input class="txt_box" type="text" name="" onkeyup="tax(this.value);";>
+		<br><br>
+
+		<label for=""> Monthly Tax: (Display ony, cannot type in the field) </label>
+		<br/>
+		<br/>
+		<input class="txt_box" type="text" id="taxCal" name="" readonly>
+		<br><br>
+
+		
+
+				
+	</div>
+	
+</body>
+	
+<footer class= "black_box black_box-footer">
+	<div class= "t1">
+		2020 created by Ali in Victoria, Australia | open sourced for everyone to use
+	</div>
+</footer>
+
+</html>
